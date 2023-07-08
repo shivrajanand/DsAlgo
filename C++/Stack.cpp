@@ -37,8 +37,7 @@ public:
         }
         catch (const std::bad_alloc &e)
         {
-            std::cout << "Memory Allocation"
-                      << " is failed: " << e.what() << std::endl;
+            std::cout << "Memory Allocation is failed: " << e.what() << std::endl;
         }
     }
     ~Stack()
