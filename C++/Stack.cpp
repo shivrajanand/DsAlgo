@@ -1,4 +1,6 @@
 // This file contains template classes for data structures
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wconversion-null"
 
 #include <iostream>
 
@@ -61,7 +63,10 @@ public:
     T pop(bool passMessage = 0)
     {
         if (top == -1)
+        {
             std::cout << "Underflow !" << std::endl;
+            return NULL;
+        }
         else
         {
             T returnValue = stack[top];
@@ -110,60 +115,60 @@ public:
 
 int main()
 {
-    Stack<int> ms(5); //default size = 5    std::cout<<std::endl;
+    Stack<int> ms(5); // default size = 5    std::cout<<std::endl;
     std::cout << "IsNull = " << ms.isNull() << std::endl;
-    std::cout<<std::endl;
+    std::cout << std::endl;
     std::cout << "Peek = " << ms.peek() << std::endl;
-    std::cout<<std::endl;
+    std::cout << std::endl;
     std::cout << "TEST CASE: Displaying empty stack" << std::endl;
     ms.display(1); // setting display to print message
     ms.display();  // setting display not to print message
-    std::cout<<std::endl;
+    std::cout << std::endl;
     std::cout << "TEST CASE: Pop from empty list" << std::endl;
     ms.pop();
-    std::cout<<std::endl;
+    std::cout << std::endl;
     std::cout << "TEST CASE: Pushing 11 with message pass = 1" << std::endl;
     ms.push(11, 1); // setting to print message
-    std::cout<<std::endl;
+    std::cout << std::endl;
     std::cout << "TEST CASE: Pushing 22 with message pass = 0" << std::endl;
     ms.push(22, 0); // setting no message printing
-    std::cout<<std::endl;
+    std::cout << std::endl;
     std::cout << "TEST CASE: Display operation" << std::endl;
     ms.display();
-    std::cout<<std::endl;
+    std::cout << std::endl;
     std::cout << "TEST CASE: Pushing 33" << std::endl;
     ms.push(33, 1); // Setting pass message = 1
-    std::cout<<std::endl;
+    std::cout << std::endl;
     std::cout << "TEST CASE: Display operation" << std::endl;
     ms.display();
-    std::cout<<std::endl;
+    std::cout << std::endl;
     std::cout << "TEST CASE: Pop operation" << std::endl;
     ms.pop(1); // setting pop to print message
-    std::cout<<std::endl;
+    std::cout << std::endl;
     std::cout << "TEST CASE: Display operation" << std::endl;
     ms.display();
-    std::cout<<std::endl;
+    std::cout << std::endl;
     std::cout << "TEST CASE: Pushing 44" << std::endl;
     ms.push(44, 0); // setting no message printing
-    std::cout<<std::endl;
+    std::cout << std::endl;
     std::cout << "TEST CASE: Display operation" << std::endl;
     ms.display();
-    std::cout<<std::endl;
+    std::cout << std::endl;
     std::cout << "TEST CASE: Pushing 55" << std::endl;
     ms.push(55, 0); // setting no message printing
-    std::cout<<std::endl;
+    std::cout << std::endl;
     std::cout << "TEST CASE: Display operation" << std::endl;
     ms.display();
-    std::cout<<std::endl;
+    std::cout << std::endl;
     std::cout << "TEST CASE: Pushing 66" << std::endl;
     ms.push(66, 0); // setting no message printing
-    std::cout<<std::endl;
+    std::cout << std::endl;
     std::cout << "TEST CASE: Display operation" << std::endl;
     ms.display();
-    std::cout<<std::endl;
+    std::cout << std::endl;
     std::cout << "TEST CASE: Pushing 77 in full stack" << std::endl;
     ms.push(77, 1); // setting message printing = 1
-    std::cout<<std::endl;
+    std::cout << std::endl;
     std::cout << "TEST CASE: Display operation" << std::endl;
     ms.display();
     return 0;
